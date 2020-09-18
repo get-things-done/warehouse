@@ -16,7 +16,7 @@ class WarehouseServiceProvider extends ServiceProvider
          */
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'warehouse');
         // $this->loadViewsFrom(__DIR__.'/../resources/views', 'warehouse');
-        // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         // $this->loadRoutesFrom(__DIR__.'/routes.php');
 
         if ($this->app->runningInConsole()) {
@@ -41,6 +41,11 @@ class WarehouseServiceProvider extends ServiceProvider
 
             // Registering package commands.
             // $this->commands([]);
+
+            // Publishing migrations.
+            $this->publishes([
+                __DIR__.'/../database/migrations/' => database_path('migrations')
+            ], 'migrations');
         }
     }
 
