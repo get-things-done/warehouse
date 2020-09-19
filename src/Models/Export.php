@@ -5,8 +5,7 @@ class Export extends Model
 {
     protected $table = 'transfer';
 
-    public function coefficient()
-    {
-        return -1;
-    }
+    protected $attributes = [
+        'coefficient' => -1
+    ];
 }

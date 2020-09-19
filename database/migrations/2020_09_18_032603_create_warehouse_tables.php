@@ -27,6 +27,7 @@ class CreateWarehouseTables extends Migration
             $table->id();
             $table->morphs('tranferable');
             $table->bigInteger('product_id');
+            $table->bigInteger('coefficient')->default(1);
             $table->bigInteger('quantity')->default(0);
             $table->timestamps();
         });

@@ -9,4 +9,9 @@ class WarehouseImport extends Model
     {
         return $this->morphMany(Import::class,'tranferable');
     }
+    
+    public function exports()
+    {
+        return $this->belongsToMany(WarehouseExport::class,'warehouse_transfer','import_id','export_id');
+    }
 }

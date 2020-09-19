@@ -6,25 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 class Tranfer extends Model
 {
     protected $fillable = [
-        'transferable_id','transferable_type','warehouse_id','product_id','quantity'
+        'transferable_id','transferable_type','product_id','coefficient','quantity'
     ];
-
-    public $coefficient = 1;
-
-    public function coefficient()
-    {
-        return $this->coefficient ?? 1;
-    }
-
-    public function setQuantityAttribute($value)
-    {
-        return $this->coefficient()*$value;
-    } 
-
-    public function getQuantityAttribute()
-    {
-        return $this->quantity/$this->coefficient();
-    }
 
     /**
      * Get the owning tranferable model.
