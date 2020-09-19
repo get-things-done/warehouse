@@ -18,6 +18,11 @@ class CreateWarehouseTables extends Migration
             $table->timestamps();
         });
         
+        Schema::create('warehouses', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
+        });
+        
         Schema::create('tranfers', function (Blueprint $table) {
             $table->id();
             $table->morphs('tranferable');
@@ -34,7 +39,8 @@ class CreateWarehouseTables extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('warehouses');
         Schema::dropIfExists('tranfers');
+        Schema::dropIfExists('products');
     }
 }

@@ -3,6 +3,7 @@
 namespace GetThingsDone\Warehouse;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Database\Eloquent\Relations\Relation;
 
 class WarehouseServiceProvider extends ServiceProvider
 {
@@ -47,6 +48,8 @@ class WarehouseServiceProvider extends ServiceProvider
                 __DIR__.'/../database/migrations/' => database_path('migrations')
             ], 'migrations');
         }
+
+        $this->morphMap();
     }
 
     /**
@@ -61,5 +64,12 @@ class WarehouseServiceProvider extends ServiceProvider
         $this->app->singleton('warehouse', function () {
             return new Warehouse;
         });
+    }
+
+    public function morphMap()
+    {
+        Relation::morphMap(
+            config('warehouse.tranfer.morph_map')
+        );
     }
 }
