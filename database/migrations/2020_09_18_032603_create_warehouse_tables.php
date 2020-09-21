@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use GetThingsDone\Warehouse\Blueprints\TransferBlueprint;
 
 class CreateWarehouseTables extends Migration
 {
@@ -25,10 +26,8 @@ class CreateWarehouseTables extends Migration
         
         Schema::create('tranfers', function (Blueprint $table) {
             $table->id();
-            $table->morphs('tranferable');
-            $table->bigInteger('product_id');
-            $table->bigInteger('coefficient')->default(1);
-            $table->bigInteger('quantity')->default(0);
+            
+            $table = TransferBlueprint::defaultColumns($table);
             $table->timestamps();
         });
     }

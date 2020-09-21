@@ -30,7 +30,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "GetThingsDone\\Warehouse\\Tests\\": "tests"
+            "GetThingsDone\\Warehouse\\Tests\\": "tests",
+            "GetThingsDone\\Warehouse\\Database\\Factories\\": "database/factories"
         }
     },
     "scripts": {

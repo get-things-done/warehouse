@@ -1,13 +1,12 @@
 <?php
 namespace GetThingsDone\Warehouse\Models;
 
-class WarehouseExport extends Model
+class WarehouseExport extends Transfer
 {
-    public function exports()
-    {
-        return $this->morphMany(Export::class,'transferable');
-    }
-
+    public $attributes = [
+        'coefficient' => -1
+    ];
+    
     public function imports()
     {
         return $this->belongsToMany(WarehouseImport::class,'warehouse_transfer','export_id','import_id');

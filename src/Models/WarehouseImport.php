@@ -3,12 +3,9 @@ namespace GetThingsDone\Warehouse\Models;
 
 use GetThingsDone\Warehouse\Models\Import;
 
-class WarehouseImport extends Model
+class WarehouseImport extends Transfer
 {
-    public function imports()
-    {
-        return $this->morphMany(Import::class,'tranferable');
-    }
+    
     
     public function exports()
     {

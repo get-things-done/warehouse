@@ -1,1 +1,1 @@
-C:37:"PHPUnit\Runner\DefaultTestResultCache":115:{a:2:{s:7:"defects";a:0:{}s:5:"times";a:1:{s:55:"GetThingsDone\Warehouse\Tests\ExampleTest::true_is_true";d:0.102;}}}
+C:37:"PHPUnit\Runner\DefaultTestResultCache":301:{a:2:{s:7:"defects";a:2:{s:7:"Warning";i:6;s:59:"GetThingsDone\Warehouse\Tests\WarehouseImport::true_is_true";i:4;}s:5:"times";a:3:{s:55:"GetThingsDone\Warehouse\Tests\ExampleTest::true_is_true";d:0.102;s:7:"Warning";d:0.001;s:59:"GetThingsDone\Warehouse\Tests\WarehouseImport::true_is_true";d:1.434;}}}
